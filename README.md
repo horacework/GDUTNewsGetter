@@ -8,9 +8,13 @@
 * Windows 7
 
 ## 项目进展
+
 * 2017-05-15 完成定时获取通知标题并静态化成JSON文件
+* 2017-05-15 完成服务器建设，可为前端提供数据
+
 
 ## 使用方法
+
 * 启用定时器
 
 ```
@@ -19,7 +23,9 @@ $ python infoGetter.py
 
 
 ## 参考
+
 [trustguan/GDUTExamDetector](https://github.com/trustguan/GDUTExamDetector)
 
 ## Licence
+
 [MIT](https://github.com/horacework/GDUTNewsGetter/blob/master/LICENSE)
