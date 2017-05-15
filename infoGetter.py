@@ -87,9 +87,23 @@ def GetTitleFromSystem(v2ex_session, header, category):
         json.dump(jsonContent, f)
 
 
+def GetDetailFromSystem(v2ex_session, header, articleId):
+
+    response = v2ex_session.get('http://news.gdut.edu.cn/viewarticle.aspx?articleid=' + str(articleId), headers=header)
+    if response.status_code != 200:
+        print "获取文章内容失败"
+        return 'False'
+
+    soup = BeautifulSoup(response.text, "html.parser")
+    list = soup.find_all(id="articleBody")
+    return list[0].get_text()
+
 if __name__ == "__main__":
 
     v2ex_session, header = LoginSystem()
+
+    # GetDetailFromSystem(v2ex_session, header, 121961)
+
     if v2ex_session is None or header is None:
         print "登录教务系统失败"
         exit(0)
